@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI  Calculator </title>
+    <link rel="stylesheet " href="styles.css">
+</head>
+<body>
+    <div class="calc">
+        <span id="title">BMI Calculator</span>
+        <input id="height" type="number"  placeholder="Height (in cm)">
+        <input id="weight" type="number"  placeholder="Weight (in kg)">
+
+         <!-- onclick of the button -->
+        <button onclick="calculate()">calculate</button>
+        <span id="result">Your Result will be shown here!</span>
+    </div>
+    <script src="../eel.js"></script>
+    <script>
+        result_text =document.getElementById("result");
+        height =document.getElementById("height");
+        weight =document.getElementById("weight");
+        function calculate() { 
+            //  Call python's bmi_calculator  function
+           eel.bmi_calculator(height.value, weight.value)(result);
+        }
+        function  result(result){
+            result_text.innerHTML = result;
+        }
+        </script> 
+
+
+
+
+    </script>
+</body>
+</html>
